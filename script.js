@@ -52,3 +52,8 @@ let objetMessages = objetMessagesSansTri.filter(function(e) {
 console.log(objetMessages)
 
 
+/* Afficher le nombre de messages envoyés */
+
+console.log(`Vous vous êtes envoyés ${objetMessages.length} messages 😲`)
+
+
