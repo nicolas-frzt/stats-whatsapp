@@ -57,3 +57,18 @@ console.log(objetMessages)
 console.log(`Vous vous êtes envoyés ${objetMessages.length} messages 😲`)
 
 
+/* Afficher les 10 premiers messages envoyés */
+function premiersMessagesEnvoyes() {
+    let reponse
+    for (let index = 0; index < 10; index++) {
+        if (index === 0) {
+            reponse = " \n   " + objetMessages[index].utilisateur + " : " + objetMessages[index].message
+        } else {
+            reponse = reponse + " \n   " + objetMessages[index].utilisateur + " : " + objetMessages[index].message
+        }
+    }
+    return reponse
+}
+
+console.log(`Vos premiers messages étaient : \n ${premiersMessagesEnvoyes()}`)
+
