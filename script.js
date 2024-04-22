@@ -14,10 +14,9 @@ function convertirEnObjet(ligne) {
     if (typeof dateStr === 'undefined' || typeof rest === 'undefined') {
         return;
     }
-    const [utilisateur, ...messageTxt] = rest.split(': ');
-    // console.log(utilisateur)
+    const [utilisateur, ...messageTxt] = rest.split(':');
     // Au cas où il y aurait des : dans le messages, que le reste du message ne soit pas ignoré
-    const message = messageTxt.join(': ')
+    const message = messageTxt.join(':')
     const [date, temps] = dateStr.split(', ');
     const [jour, mois, annee] = date.split('/');
     const [heure, minutes] = temps.split(':');
@@ -41,7 +40,7 @@ function convertirFichierEnObjet(filename) {
 }
 
 // Exemple d'utilisation
-const objetMessagesSansTri = convertirFichierEnObjet('fichier.txt');
+const objetMessagesSansTri = convertirFichierEnObjet('Exemple vraie discussion.txt');
 
 // Supprimer les messages définis comme undefined (envoyés par WhatsApp ou sur plusieurs lignes)
 let objetMessages = objetMessagesSansTri.filter(function(e) {
@@ -49,12 +48,12 @@ let objetMessages = objetMessagesSansTri.filter(function(e) {
 })
 
 
-console.log(objetMessages)
+// console.log(objetMessages)
 
 
 /* Afficher le nombre de messages envoyés */
 
-console.log(`Vous vous êtes envoyés ${objetMessages.length} messages 😲`)
+// console.log(`Vous vous êtes envoyés ${objetMessages.length} messages 😲`)
 
 
 /* Afficher les 10 premiers messages envoyés */
@@ -70,7 +69,7 @@ function premiersMessagesEnvoyes() {
     return reponse
 }
 
-console.log(`Vos premiers messages étaient : \n ${premiersMessagesEnvoyes()}`)
+// console.log(`Vos premiers messages étaient : \n ${premiersMessagesEnvoyes()}`)
 
 /* Afficher la répartition de la parole (dans une conversation à 2) */
 
@@ -106,3 +105,31 @@ console.log(`L'utilisateur ${user2} a envoyé ${user2NbMessage} messages`)
 console.log(`${Math.round(user1NbMessage / objetMessages.length * 100)} % des messages ont étés envoyés par ${user1}`)
 console.log(`${Math.round(user2NbMessage / objetMessages.length * 100)} % des messages ont étés envoyés par ${user2}`)
 
+// Permet d'afficher un emoji (ici 😆)
+console.log("\ud83d\ude06");
+
+/* Afficher les mots les + utilisés*/
+
+function motsLesPlusUtilises() {
+    let tousLesMots = "";
+    for (let index = 0; index < objetMessages.length; index++) {
+        tousLesMots = tousLesMots + " " + objetMessages[index].message
+    }
+    const tousLesMotsMinuscules = tousLesMots.toLowerCase().match(/\b\p{L}+\b/giu);
+    const frequenceApparitionMots = {};
+
+    for (const mot of tousLesMotsMinuscules) {
+        frequenceApparitionMots[mot] = (frequenceApparitionMots[mot] || 0) + 1;
+    }
+
+    const sApparitionMots = Object.entries(frequenceApparitionMots)
+        .sort((a, b) => b[1] - a[1]);
+
+    const top10MotsPlusUtilises = sortedFrequencesApparitionMots.slice(0, 10);
+
+    return top10MotsPlusUtilises.map(([mot, frequence]) => `${mot}: ${frequence}`);
+}
+
+// const frequentWords = mostFrequentWords(tousLesMots);
+console.log("Les 10 mots les plus fréquents sont:");
+console.log(motsLesPlusUtilises());
