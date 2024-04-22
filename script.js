@@ -191,3 +191,8 @@ function emojisLesPlusUtilises() {
 }
 
 console.log(emojisLesPlusUtilises());
+
+
+/* Afficher le nombre de caractères envoyés et la moyenne de caractères par message*/
+console.log(`Votre conversation est composée de ${tousLesMots.length} caractères`);
+console.log(`Cela signifie qu'un de vos message était constitué d'en moyenne ${Math.round((tousLesMots.length) / objetMessages.length)} caractères`);
