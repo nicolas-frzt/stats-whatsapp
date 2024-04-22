@@ -53,7 +53,7 @@ let objetMessages = objetMessagesSansTri.filter(function(e) {
 
 /* Afficher le nombre de messages envoyés */
 
-// console.log(`Vous vous êtes envoyés ${objetMessages.length} messages 😲`)
+console.log(`Vous vous êtes envoyés ${objetMessages.length} messages 😲`)
 
 
 /* Afficher les 10 premiers messages envoyés */
@@ -105,17 +105,16 @@ console.log(`L'utilisateur ${user2} a envoyé ${user2NbMessage} messages`)
 console.log(`${Math.round(user1NbMessage / objetMessages.length * 100)} % des messages ont étés envoyés par ${user1}`)
 console.log(`${Math.round(user2NbMessage / objetMessages.length * 100)} % des messages ont étés envoyés par ${user2}`)
 
-// Permet d'afficher un emoji (ici 😆)
-console.log("\ud83d\ude06");
 
 /* Afficher les mots les + utilisés*/
 
+let tousLesMots = "";
+for (let index = 0; index < objetMessages.length; index++) {
+    tousLesMots = tousLesMots + " " + objetMessages[index].message
+}
+const tousLesMotsMinuscules = tousLesMots.toLowerCase().match(/\b\p{L}+\b/giu);
+
 function motsLesPlusUtilises(annulerMots) {
-    let tousLesMots = "";
-    for (let index = 0; index < objetMessages.length; index++) {
-        tousLesMots = tousLesMots + " " + objetMessages[index].message
-    }
-    const tousLesMotsMinuscules = tousLesMots.toLowerCase().match(/\b\p{L}+\b/giu);
     const frequenceApparitionMots = {};
 
     const listeMotsAnnulables = ["je","j","pas","en","on","il","ils","pour","l","les","le","la","un","une","a","dans","par","vers","tu","nous","vous","elle","elles","moi","toi","t","y","avec","sur","suis","es","est","ou","se","ce","cette","cet","ces","me","ne","mon","ma","ta","sa","qu","que","ai","as","avais","avait","tout","tre","très","m","d","c","de","trop","et","est","si","te","qui","lui","s"];
@@ -145,6 +144,50 @@ function motsLesPlusUtilises(annulerMots) {
 }
 
 // const frequentWords = mostFrequentWords(tousLesMots);
-console.log("Les 10 mots les plus fréquents sont:");
-console.log(motsLesPlusUtilises(true));
-console.log("La présence de 'médias' et 'omis' correpond à une photo / une vidéo / un message audio");
+// console.log("Les 10 mots les plus fréquents sont:");
+// console.log(motsLesPlusUtilises(true));
+// console.log("La présence de 'médias' et 'omis' correpond à une photo / une vidéo / un message audio");
+
+
+/* Afficher les emojis les + utilisés*/
+let emojisEtNombres = tousLesMots.match(/\p{Emoji}+/gu);
+let emojis = emojisEtNombres.filter((caractère) => !/\p{Nd}/u.test(caractère));
+
+let emojisSolos = [];
+
+for (const grpEmojis of emojis) {
+    emojisSolos.push(emojiStringToArray(grpEmojis));
+}
+
+function emojiStringToArray (str) {
+    split = str.split(/([\uD800-\uDBFF][\uDC00-\uDFFF])/);
+    arr = [];
+    for (var i=0; i<split.length; i++) {
+      char = split[i]
+      if (char !== "") {
+        arr.push(char);
+      }
+    }
+    return arr;
+};
+
+let tableauEmojisUtilises = [];
+for (const tableau of emojisSolos) {
+    tableauEmojisUtilises = tableauEmojisUtilises.concat(tableau)
+}
+
+function emojisLesPlusUtilises() {
+    const frequenceApparitionEmoji = {};
+    for (const emojis of tableauEmojisUtilises) {
+            frequenceApparitionEmoji[emojis] = (frequenceApparitionEmoji[emojis] || 0) + 1;
+        }
+
+    const sortedFrequenceApparitionEmoji = Object.entries(frequenceApparitionEmoji)
+        .sort((a, b) => b[1] - a[1]);
+
+    const top10EmojisPlusUtilises = sortedFrequenceApparitionEmoji.slice(0, 10);
+
+    return top10EmojisPlusUtilises.map(([emoji, frequence]) => `${emoji}: ${frequence}`);
+}
+
+console.log(emojisLesPlusUtilises());
