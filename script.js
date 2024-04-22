@@ -69,7 +69,7 @@ function premiersMessagesEnvoyes() {
     return reponse
 }
 
-// console.log(`Vos premiers messages étaient : \n ${premiersMessagesEnvoyes()}`)
+console.log(`\n\nVos premiers messages étaient : \n ${premiersMessagesEnvoyes()}`)
 
 /* Afficher la répartition de la parole (dans une conversation à 2) */
 
@@ -99,10 +99,10 @@ for (let index = 0; index < objetMessages.length; index++) {
     }
 }
 
-console.log(`L'utilisateur ${user1} a envoyé ${user1NbMessage} messages`)
+console.log(`\n\nL'utilisateur ${user1} a envoyé ${user1NbMessage} messages`)
 console.log(`L'utilisateur ${user2} a envoyé ${user2NbMessage} messages`)
 
-console.log(`${Math.round(user1NbMessage / objetMessages.length * 100)} % des messages ont étés envoyés par ${user1}`)
+console.log(`\n${Math.round(user1NbMessage / objetMessages.length * 100)} % des messages ont étés envoyés par ${user1}`)
 console.log(`${Math.round(user2NbMessage / objetMessages.length * 100)} % des messages ont étés envoyés par ${user2}`)
 
 
@@ -138,15 +138,15 @@ function motsLesPlusUtilises(annulerMots) {
     const sortedFrequencesApparitionMots = Object.entries(frequenceApparitionMots)
         .sort((a, b) => b[1] - a[1]);
 
-    const top10MotsPlusUtilises = sortedFrequencesApparitionMots.slice(0, 100);
+    const top10MotsPlusUtilises = sortedFrequencesApparitionMots.slice(0, 10);
 
     return top10MotsPlusUtilises.map(([mot, frequence]) => `${mot}: ${frequence}`);
 }
 
 // const frequentWords = mostFrequentWords(tousLesMots);
-// console.log("Les 10 mots les plus fréquents sont:");
-// console.log(motsLesPlusUtilises(true));
-// console.log("La présence de 'médias' et 'omis' correpond à une photo / une vidéo / un message audio");
+console.log("\n\nLes 10 mots que vous avez le plus utilisés sont:");
+console.log(motsLesPlusUtilises(true));
+console.log("La présence de 'médias' et 'omis' correpond à une photo / une vidéo / un message audio");
 
 
 /* Afficher les emojis les + utilisés*/
@@ -190,9 +190,10 @@ function emojisLesPlusUtilises() {
     return top10EmojisPlusUtilises.map(([emoji, frequence]) => `${emoji}: ${frequence}`);
 }
 
+console.log("\n\nVos emojis les plus utilisés sont :");
 console.log(emojisLesPlusUtilises());
 
 
 /* Afficher le nombre de caractères envoyés et la moyenne de caractères par message*/
-console.log(`Votre conversation est composée de ${tousLesMots.length} caractères`);
-console.log(`Cela signifie qu'un de vos message était constitué d'en moyenne ${Math.round((tousLesMots.length) / objetMessages.length)} caractères`);
+console.log(`\n\nVotre conversation est composée de ${tousLesMots.length} caractères`);
+console.log(`Cela signifie qu'un de vos message était constitué d'en moyenne ${Math.round((tousLesMots.length) / objetMessages.length)} caractères\n\n\n`);
