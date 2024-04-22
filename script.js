@@ -72,3 +72,37 @@ function premiersMessagesEnvoyes() {
 
 console.log(`Vos premiers messages étaient : \n ${premiersMessagesEnvoyes()}`)
 
+/* Afficher la répartition de la parole (dans une conversation à 2) */
+
+// Trouver le nom des 2 utilisateurs
+let user1;
+let user2;
+
+user1 = objetMessages[0].utilisateur;
+
+let indexBoucleUtilisateur2 = 0;
+while (typeof user2 === 'undefined') {
+    if (objetMessages[indexBoucleUtilisateur2].utilisateur !== user1) {
+        user2 = objetMessages[indexBoucleUtilisateur2].utilisateur
+    }
+    indexBoucleUtilisateur2++;
+}
+
+
+let user1NbMessage = 0;
+let user2NbMessage = 0;
+
+for (let index = 0; index < objetMessages.length; index++) {
+    if (objetMessages[index].utilisateur === user1) {
+        user1NbMessage++
+    } else {
+        user2NbMessage++
+    }
+}
+
+console.log(`L'utilisateur ${user1} a envoyé ${user1NbMessage} messages`)
+console.log(`L'utilisateur ${user2} a envoyé ${user2NbMessage} messages`)
+
+console.log(`${Math.round(user1NbMessage / objetMessages.length * 100)} % des messages ont étés envoyés par ${user1}`)
+console.log(`${Math.round(user2NbMessage / objetMessages.length * 100)} % des messages ont étés envoyés par ${user2}`)
+
