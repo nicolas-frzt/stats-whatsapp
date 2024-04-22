@@ -110,7 +110,7 @@ console.log("\ud83d\ude06");
 
 /* Afficher les mots les + utilisés*/
 
-function motsLesPlusUtilises() {
+function motsLesPlusUtilises(annulerMots) {
     let tousLesMots = "";
     for (let index = 0; index < objetMessages.length; index++) {
         tousLesMots = tousLesMots + " " + objetMessages[index].message
@@ -118,18 +118,33 @@ function motsLesPlusUtilises() {
     const tousLesMotsMinuscules = tousLesMots.toLowerCase().match(/\b\p{L}+\b/giu);
     const frequenceApparitionMots = {};
 
+    const listeMotsAnnulables = ["je","j","pas","en","on","il","ils","pour","l","les","le","la","un","une","a","dans","par","vers","tu","nous","vous","elle","elles","moi","toi","t","y","avec","sur","suis","es","est","ou","se","ce","cette","cet","ces","me","ne","mon","ma","ta","sa","qu","que","ai","as","avais","avait","tout","tre","très","m","d","c","de","trop","et","est","si","te","qui","lui","s"];
     for (const mot of tousLesMotsMinuscules) {
-        frequenceApparitionMots[mot] = (frequenceApparitionMots[mot] || 0) + 1;
+        if(annulerMots) {
+            let annule = false;
+            for (let index = 0; index < listeMotsAnnulables.length; index++) {
+                if(mot === listeMotsAnnulables[index]) {
+                    annule = true;
+                    break
+                }
+            }
+            if(!annule) {
+                frequenceApparitionMots[mot] = (frequenceApparitionMots[mot] || 0) + 1;
+            }
+        } else {
+            frequenceApparitionMots[mot] = (frequenceApparitionMots[mot] || 0) + 1;
+        }
     }
 
-    const sApparitionMots = Object.entries(frequenceApparitionMots)
+    const sortedFrequencesApparitionMots = Object.entries(frequenceApparitionMots)
         .sort((a, b) => b[1] - a[1]);
 
-    const top10MotsPlusUtilises = sortedFrequencesApparitionMots.slice(0, 10);
+    const top10MotsPlusUtilises = sortedFrequencesApparitionMots.slice(0, 100);
 
     return top10MotsPlusUtilises.map(([mot, frequence]) => `${mot}: ${frequence}`);
 }
 
 // const frequentWords = mostFrequentWords(tousLesMots);
 console.log("Les 10 mots les plus fréquents sont:");
-console.log(motsLesPlusUtilises());
+console.log(motsLesPlusUtilises(true));
+console.log("La présence de 'médias' et 'omis' correpond à une photo / une vidéo / un message audio");
