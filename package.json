@@ -1,0 +1,20 @@
+{
+    "name": "stats_whatsapp",
+    "version": "1.0.0",
+    "description": "Outil permettant d'afficher des statistiques sur ses discussions WhatsApp",
+    "main": "script.js",
+    "scripts": {
+      "sass": "sass --watch ./style.scss:./style.css"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/nicolas-frzt/stats-whatsapp.git"
+    },
+    "author": "nicolas-frzt",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/nicolas-frzt/stats-whatsapp/issues"
+    },
+    "homepage": "https://github.com/nicolas-frzt/stats-whatsapp#readme"
+  }
+  
