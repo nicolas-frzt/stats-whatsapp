@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "inria";
+  src: url("inriasans-regular-webfont.woff2") format("woff2"), url("inriasans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  background: #2c2c2c;
+}
+
+/*# sourceMappingURL=default.css.map */

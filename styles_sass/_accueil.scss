@@ -1,0 +1,109 @@
+@import "./constantes";
+
+.accueil {
+    &-premierAffichage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        &-titre {
+            display: block;
+            font-family: "inria";
+            font-size: 50px;
+            text-align: center;
+            color: $titres;
+            position: relative;
+            top: 7%;
+        }
+        &-bouton {
+            position: absolute;
+            top: 50%;
+        }
+        &-scroll {
+            position: absolute;
+            bottom: 5%;
+            &-texte {
+                position: relative;
+                bottom: 12vh;
+                @include textes();
+            }
+        }
+    }
+    &-tuto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-choixPlateforme {
+            background-color: $selection;
+            margin-top: 8vh;
+            height: 50px;
+            width: 80%;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            filter: drop-shadow(20px 20px 60px #505050) drop-shadow(-20px 20px 60px #505050);
+            &-plateforme {
+                cursor: pointer;
+                &-texte {
+                    font-family: "inria", sans-serif;
+                    font-size: 25px;
+                    color: $titres;
+                    height: 50px;
+                    width: 43vw;
+                    border-radius: 50px;
+                    scale: 0.8;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &--android {
+                        background-color: $arriere_plan;
+                    }
+                    &--iphone {
+                        background-color: $selection;
+
+                    }
+                }
+            }
+        }
+        &-etapes {
+            margin-top: 13vh;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            &-etape {
+                display: flex;
+                gap: 8vw;
+                &-cadre {
+                    margin-left: 12vw;
+                    height: 40px;
+                    min-width: 40px;
+                    background-color: #D9D9D9;
+                    border-radius: 9px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    filter: drop-shadow(4px 4px 16px #D5D5D5) drop-shadow(-4px -4px 16px #D5D5D5);
+                    &-numero {
+                        font-family: "inria";
+                        font-size: 25px;
+                        color: $textes;
+                    }
+                }
+                &-description {
+                    margin-right: 12vw;
+                    font-family: "inria";
+                    font-size: 25px;
+                    color: $textes;
+                }
+            }
+            &-bouton {
+                position: relative;
+                margin-bottom: 12vh;
+                margin-top: 3vh;
+                transform: translateX(50%);
+            }
+        }
+    }
+}
+

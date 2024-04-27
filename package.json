@@ -4,7 +4,7 @@
     "description": "Outil permettant d'afficher des statistiques sur ses discussions WhatsApp",
     "main": "script.js",
     "scripts": {
-      "sass": "sass --watch ./style.scss:./style.css"
+      "sass": "sass --watch ./styles_sass/_accueil.scss:./styles_css/accueil.css ./styles_sass/_default.scss:./styles_css/default.css ./styles_sass/_composants.scss:./styles_css/composants.css"
     },
     "repository": {
       "type": "git",

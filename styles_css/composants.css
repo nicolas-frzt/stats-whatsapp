@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "inria";
+  src: url("inriasans-regular-webfont.woff2") format("woff2"), url("inriasans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.bouton {
+  width: 50%;
+  height: 70px;
+  border-radius: 50px;
+  background-color: #1daa61;
+  filter: drop-shadow(20px 20px 60px #1daa61) drop-shadow(-20px -20px 60px #1daa61);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bouton-texte {
+  font-family: "inria", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.fleche {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.fleche span {
+  border-radius: 5px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 5px solid #ffffff;
+  border-right: 5px solid #ffffff;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+.fleche span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+.fleche span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+
+/*# sourceMappingURL=composants.css.map */

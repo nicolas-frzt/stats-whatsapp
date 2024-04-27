@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import de Google Charts : permet d'afficher des graphiques -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Import de JsZip : Permet de dézipper le fichier importé par l'utilisateur -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <!-- Import des fichiers CSS -->
+    <link rel="stylesheet" href="./styles_css/default.css">
+    <link rel="stylesheet" href="./styles_css/accueil.css">
+    <link rel="stylesheet" href="./styles_css/composants.css">
+    <script src="elementsCliquables.js"></script>
+    <title>Statistiques WhatsApp</title>
+</head>
+<body class="accueil">
+    <div class="accueil-premierAffichage">
+        <span class="accueil-premierAffichage-titre">Statistiques discussions WhatsApp</span>
+        <div class="accueil-premierAffichage-bouton bouton">
+            <span class="bouton-texte">Choisir le fichier</span>
+        </div>
+        <div class="accueil-premierAffichage-scroll">
+            <span class="accueil-premierAffichage-scroll-texte">Comment faire ?</span>
+            <a class="fleche" href="#tuto-ancre">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="accueil-tuto">
+        <div class="accueil-tuto-ancre" id="tuto-ancre"></div>
+        <div class="accueil-tuto-choixPlateforme">
+            <div class="accueil-tuto-choixPlateforme-plateforme" onclick="changerOnglet(0)">
+                <div class="accueil-tuto-choixPlateforme-plateforme-texte accueil-tuto-choixPlateforme-plateforme-texte--android">
+                    <span>Android</span>
+                </div>
+            </div>
+            <div class="accueil-tuto-choixPlateforme-plateforme" onclick="changerOnglet(1)">
+                <div class="accueil-tuto-choixPlateforme-plateforme-texte accueil-tuto-choixPlateforme-plateforme-texte--iphone">
+                    <span>iPhone</span>
+                </div>
+            </div>
+        </div>
+        <div class="accueil-tuto-etapes">
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        1
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Ouvre la discussion WhatsApp que tu souhaites analyser
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        2
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Clique sur le menu en haut à droite puis sur Plus
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        3
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Clique sur Exporter discussion
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        4
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Choisis l’option “Sans médias”
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        5
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Enregistre le fichier dans tes téléchargements
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        6
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Clique sur bouton ci-dessous et choisis le fichier qui s’appelle “Discussion avec [Nom de la personne].zip”
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-bouton bouton">
+                <span class="bouton-texte">Choisir le fichier</span>
+            </div>
+        </div>
+        <div class="accueil-tuto-etapes" style="display: none">
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        1
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Ouvre la discussion WhatsApp que tu souhaites analyser
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        2
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Clique sur le nom de la personne en haut de l'écran
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        3
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Clique sur le bouton "Exporter la discussion"
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        4
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Choisis l’option “Sans médias”
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        5
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Enregistre le fichier dans tes téléchargements
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-etape">
+                <div class="accueil-tuto-etapes-etape-cadre">
+                    <span class="accueil-tuto-etapes-etape-cadre-numero">
+                        6
+                    </span>
+                </div>
+                <span class="accueil-tuto-etapes-etape-description">
+                    Clique sur bouton ci-dessous et choisis le fichier qui s’appelle “Discussion avec [Nom de la personne].zip”
+                </span>
+            </div>
+            <div class="accueil-tuto-etapes-bouton bouton">
+                <span class="bouton-texte">Choisir le fichier</span>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+    <!-- <input type="file" name="whatsAppExport" id="whatsAppExport" accept=".zip">
+    <div id="chart_div"></div> -->
+</body>
+<!-- <script type="module" src="script.js"></script> -->
+</html>

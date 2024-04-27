@@ -1,9 +1,9 @@
 // Couleurs
 
 $vert: #1daa61;
-$arrière_plan: #2c2c2c;
-$foncé: #202020;
-$sélection: #5e5e5e;
+$arriere_plan: #2c2c2c;
+$fonce: #202020;
+$selection: #5e5e5e;
 $titres: #ffffff;
 $textes: #9e9e9e;
 
@@ -33,3 +33,8 @@ $textes: #9e9e9e;
     color: $textes;
 }
 
+@mixin textes() {
+    font-family: "inria", sans-serif;
+    font-size: 20px;
+    color: $titres;
+}

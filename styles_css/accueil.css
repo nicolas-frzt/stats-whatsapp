@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "inria";
+  src: url("inriasans-regular-webfont.woff2") format("woff2"), url("inriasans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.accueil-premierAffichage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+.accueil-premierAffichage-titre {
+  display: block;
+  font-family: "inria";
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  top: 7%;
+}
+.accueil-premierAffichage-bouton {
+  position: absolute;
+  top: 50%;
+}
+.accueil-premierAffichage-scroll {
+  position: absolute;
+  bottom: 5%;
+}
+.accueil-premierAffichage-scroll-texte {
+  position: relative;
+  bottom: 12vh;
+  font-family: "inria", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+.accueil-tuto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.accueil-tuto-choixPlateforme {
+  background-color: #5e5e5e;
+  margin-top: 8vh;
+  height: 50px;
+  width: 80%;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  filter: drop-shadow(20px 20px 60px #505050) drop-shadow(-20px 20px 60px #505050);
+}
+.accueil-tuto-choixPlateforme-plateforme {
+  cursor: pointer;
+}
+.accueil-tuto-choixPlateforme-plateforme-texte {
+  font-family: "inria", sans-serif;
+  font-size: 25px;
+  color: #ffffff;
+  height: 50px;
+  width: 43vw;
+  border-radius: 50px;
+  scale: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.accueil-tuto-choixPlateforme-plateforme-texte--android {
+  background-color: #2c2c2c;
+}
+.accueil-tuto-choixPlateforme-plateforme-texte--iphone {
+  background-color: #5e5e5e;
+}
+.accueil-tuto-etapes {
+  margin-top: 13vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.accueil-tuto-etapes-etape {
+  display: flex;
+  gap: 8vw;
+}
+.accueil-tuto-etapes-etape-cadre {
+  margin-left: 12vw;
+  height: 40px;
+  min-width: 40px;
+  background-color: #D9D9D9;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(4px 4px 16px #D5D5D5) drop-shadow(-4px -4px 16px #D5D5D5);
+}
+.accueil-tuto-etapes-etape-cadre-numero {
+  font-family: "inria";
+  font-size: 25px;
+  color: #9e9e9e;
+}
+.accueil-tuto-etapes-etape-description {
+  margin-right: 12vw;
+  font-family: "inria";
+  font-size: 25px;
+  color: #9e9e9e;
+}
+.accueil-tuto-etapes-bouton {
+  position: relative;
+  margin-bottom: 12vh;
+  margin-top: 3vh;
+  transform: translateX(50%);
+}
+
+/*# sourceMappingURL=accueil.css.map */
