@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import de Google Charts : permet d'afficher des graphiques -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Statistiques WhatsApp</title>
+    <link rel="stylesheet" href="./styles_css/composants.css">
+    <link rel="stylesheet" href="./styles_css/page5.css">
+    <link rel="stylesheet" href="./styles_css/default.css">
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          let donnees = google.visualization.arrayToDataTable([
+            ['Emojis les plus utilisés', "Fréquence d'apparition"],
+            ['🤣', 57],
+            ['😥', 43],
+            ['😱', 32],
+            ['💀', 25],
+            ['📕', 18],
+            ['😘', 17],
+            ['⚛️', 8]
+          ]);
+  
+          let options = {
+            pieHole: 0.4,
+            backgroundColor: "#2c2c2c",
+            colors: ["#9E9E9E", "#ffffff"],
+            pieSliceText: "none",
+            legend: 'none',
+            fontSize: 17
+          };
+  
+          let chart = new google.visualization.PieChart(document.getElementById('graphiqueEmojisLesPlusUtilises'));
+          chart.draw(donnees, options);
+        }
+      </script>
+</head>
+<body>
+    <div class="barreAvancement">
+        <div class="barreAvancement-element barreAvancement-element--actif"></div>
+        <div class="barreAvancement-element barreAvancement-element--actif"></div>
+        <div class="barreAvancement-element barreAvancement-element--actif"></div>
+        <div class="barreAvancement-element barreAvancement-element--actif"></div>
+        <div class="barreAvancement-element barreAvancement-element--actif"></div>
+        <div class="barreAvancement-element"></div>
+    </div>
+    <div class="contenu">
+        <span class="contenu-titre">Votre emoji préféré est : 🤣</span>
+        <div class="contenu-graphique" id="graphiqueEmojisLesPlusUtilises"></div>
+    </div>
+    <a class="clicPrecedent" href="./page4.html"></a>
+    <a class="clicSuivant" href="./page6.html"></a>
+</body>
+</html>

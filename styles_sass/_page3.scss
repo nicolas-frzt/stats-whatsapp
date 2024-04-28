@@ -1,0 +1,24 @@
+@import "./constantes";
+
+body {
+    .contenu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        flex-direction: column;
+        gap: 10vh;
+        &-titre {
+            @include titres_analyse();
+            margin-top: 13vh;
+        }
+        &-premiersMessages {
+            font-family: "inria";
+            color: $titres;
+            font-size: 22px;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            margin-bottom: 7vh;
+        }
+    }
+}

@@ -33,6 +33,7 @@
   font-family: "inria", sans-serif;
   font-size: 20px;
   color: #ffffff;
+  cursor: pointer;
 }
 .accueil-tuto {
   display: flex;

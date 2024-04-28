@@ -1,0 +1,17 @@
+@import "./constantes";
+
+body {
+    overflow: hidden;
+    .contenu {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+        gap: 15vh;
+        &-texte {
+            @include titres_analyse();
+        }
+    }
+}

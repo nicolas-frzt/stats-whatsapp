@@ -59,5 +59,40 @@
     transform: rotate(45deg) translate(20px, 20px);
   }
 }
+.barreAvancement {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 3vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+.barreAvancement-element {
+  width: 12%;
+  height: 2vw;
+  background-color: #5e5e5e;
+  border-radius: 50px;
+}
+.barreAvancement-element--actif {
+  background-color: #ffffff !important;
+}
+
+.clicSuivant {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 80%;
+  height: 100vh;
+  width: 20vw;
+}
+
+.clicPrecedent {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 20vw;
+}
 
 /*# sourceMappingURL=composants.css.map */

@@ -41,7 +41,7 @@ function convertirFichierEnObjet(filename) {
 // Transforme le fichier txt de messages en tableauDObjets
 //  La fonction .filter() permet de supprimer les messages définis comme undefined 
 // (envoyés par WhatsApp ou sur plusieurs lignes)
-const tableauMessages = convertirFichierEnObjet('Exemple vraie discussion.txt').filter(function(e) {
+const tableauMessages = convertirFichierEnObjet('Exemple vraie discution.txt').filter(function(e) {
     return e !== undefined
 });
 
@@ -114,7 +114,7 @@ function concatenerTousLesMessages() {
 }
 
 
-// Fonction qui renvoit les 10 (ajustable) mots les plus utilisés dans la discussion
+// Fonction qui renvoit les 10 (ajustable) mots les plus utilisés dans la discution
 function motsLesPlusUtilises(annulerMots) {
     const frequenceApparitionMots = {}; // Objet qui contiendra tous les couples mot / frequence d'apparition
     // Supprimer de la réponse de mots les mots les + utilisés donc pas intéressants
@@ -159,7 +159,7 @@ console.log("\n\nLes 10 mots que vous avez le plus utilisés sont:");
 console.log(motsLesPlusUtilises(true));
 // Dans le fichier txt généré par WhatsApp, les médias (audios / photos / vidéos) ne sont pas inclus pour éviter de trop charger le fichier
 // Donc, WhatsApp met à la place <Médias omis>
-// Il est cependant possible de générer un fichier txt de discussion comprenant aussi les médias mais il peut être très volumineux
+// Il est cependant possible de générer un fichier txt de discution comprenant aussi les médias mais il peut être très volumineux
 console.log("La présence de 'médias' et 'omis' correpond à une photo / une vidéo / un message audio");
 
 

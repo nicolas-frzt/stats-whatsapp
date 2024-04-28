@@ -1,0 +1,19 @@
+@import "./constantes";
+
+    body {
+    overflow: hidden;
+    .contenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        &-titre {
+            @include titres_analyse();
+        }
+        &-graphique {
+            width: 100%;
+            height: 50vh;
+        }
+    }
+}

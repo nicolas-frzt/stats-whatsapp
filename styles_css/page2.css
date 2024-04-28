@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "inria";
+  src: url("inriasans-regular-webfont.woff2") format("woff2"), url("inriasans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  overflow: hidden;
+}
+body .contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+body .contenu-titre {
+  font-family: "inria", sans-serif;
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  text-wrap: balance;
+}
+body .contenu-graphique {
+  width: 100%;
+  height: 50vh;
+}
+
+/*# sourceMappingURL=page2.css.map */

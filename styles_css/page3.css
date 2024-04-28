@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "inria";
+  src: url("inriasans-regular-webfont.woff2") format("woff2"), url("inriasans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body .contenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  gap: 10vh;
+}
+body .contenu-titre {
+  font-family: "inria", sans-serif;
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  text-wrap: balance;
+  margin-top: 13vh;
+}
+body .contenu-premiersMessages {
+  font-family: "inria";
+  color: #ffffff;
+  font-size: 22px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-bottom: 7vh;
+}
+
+/*# sourceMappingURL=page3.css.map */

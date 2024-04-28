@@ -26,6 +26,7 @@
                 position: relative;
                 bottom: 12vh;
                 @include textes();
+                cursor: pointer;
             }
         }
     }
