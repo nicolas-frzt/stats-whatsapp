@@ -29,6 +29,7 @@ body .contenu-premiersMessages {
   margin-left: 10vw;
   margin-right: 10vw;
   margin-bottom: 7vh;
+  text-wrap: balance;
 }
 
 /*# sourceMappingURL=page3.css.map */
