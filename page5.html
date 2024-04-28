@@ -44,7 +44,7 @@
         <div class="barreAvancement-element"></div>
     </div>
     <div class="contenu">
-        <span class="contenu-titre">Votre emoji préféré est : 🤣</span>
+        <span class="contenu-titre"></span>
         <div class="contenu-graphique" id="graphiqueEmojisLesPlusUtilises"></div>
     </div>
     <a class="clicPrecedent" href="./page4.html"></a>
@@ -54,6 +54,8 @@
   if (emojisLesPlusUtilisesTableau[0] === undefined) {
     document.querySelector(".contenu-titre").innerText = "Vous n'avez pas utilisé d'emojis 🥲"
     document.querySelector("#graphiqueEmojisLesPlusUtilises").style.display = "none";
+  } else {
+    document.querySelector(".contenu-titre").innerText = `Votre emoji préféré est : ${emojisLesPlusUtilisesTableau[0][0]}`
   }
 </script>
 </html>
