@@ -9,6 +9,7 @@ body {
         height: 100vh;
         &-texte {
             @include titres_analyse();
+            text-wrap: nowrap !important;
         }
     }
 }
