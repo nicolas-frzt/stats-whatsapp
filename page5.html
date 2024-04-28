@@ -10,20 +10,16 @@
     <link rel="stylesheet" href="./styles_css/page5.css">
     <link rel="stylesheet" href="./styles_css/default.css">
     <script type="text/javascript">
+      let emojisLesPlusUtilisesTableau = JSON.parse(localStorage.getItem("emojisLesPlusUtilises"));
+      // Création du tableau selon le format voulu par Google Charts
+      let tableau = [['Emojis les plus utilisés', "Fréquence d'apparition"]]
+      for (let i = 0; i < emojisLesPlusUtilisesTableau.length; i++) {
+        tableau.push([emojisLesPlusUtilisesTableau[i][0], emojisLesPlusUtilisesTableau[i][1]])
+      }
         google.charts.load("current", {packages:["corechart"]});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
-          let donnees = google.visualization.arrayToDataTable([
-            ['Emojis les plus utilisés', "Fréquence d'apparition"],
-            ['🤣', 57],
-            ['😥', 43],
-            ['😱', 32],
-            ['💀', 25],
-            ['📕', 18],
-            ['😘', 17],
-            ['⚛️', 8]
-          ]);
-  
+          let donnees = google.visualization.arrayToDataTable(tableau);  
           let options = {
             pieHole: 0.4,
             backgroundColor: "#2c2c2c",
@@ -54,4 +50,10 @@
     <a class="clicPrecedent" href="./page4.html"></a>
     <a class="clicSuivant" href="./page6.html"></a>
 </body>
+<script>
+  if (emojisLesPlusUtilisesTableau[0] === undefined) {
+    document.querySelector(".contenu-titre").innerText = "Vous n'avez pas utilisé d'emojis 🥲"
+    document.querySelector("#graphiqueEmojisLesPlusUtilises").style.display = "none";
+  }
+</script>
 </html>

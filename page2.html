@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="./styles_css/page2.css">
     <link rel="stylesheet" href="./styles_css/default.css">
     <script type="text/javascript">
+        // Récupérer les messages depuis le stockage local
+        const repartitionParole = JSON.parse(localStorage.getItem('repartitionParole'));
+        let user1Pourcentage = repartitionParole[0]
+        let user2Pourcentage = repartitionParole[1]
+        const tableau = [['Utilisateur', "Pourcentage de messages"], user1Pourcentage, user2Pourcentage]
         google.charts.load("current", {packages:["corechart"]});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
-          let donnees = google.visualization.arrayToDataTable([
-            ['Utilisateur', "Pourcentage de messages"],
-            ['Zozouille', 57],
-            ['Nicolas', 43]
-          ]);
+          let donnees = google.visualization.arrayToDataTable(tableau);
   
           let options = {
             pieHole: 0.4,
@@ -43,12 +44,21 @@
         <div class="barreAvancement-element"></div>
     </div>
     <div class="contenu">
-        <span class="contenu-titre">
-            Zozouille a envoyé 57% des messages :
+        <span class="contenu-titre" id="pourcentageMessagePlusEleve">
         </span>
         <div class="contenu-graphique" id="graphiquePourcentageMessageParUtilisateur"></div>
     </div>
     <a class="clicPrecedent" href="./page1.html"></a>
     <a class="clicSuivant" href="./page3.html"></a>
 </body>
+<script>
+  let txt = document.getElementById("pourcentageMessagePlusEleve");
+  let pourcentageUtilisateur1 = Math.round(user1Pourcentage[1] / (user1Pourcentage[1] + user2Pourcentage[1]) * 100);
+  let pourcentageUtilisateur2 = Math.round(user2Pourcentage[1] / (user1Pourcentage[1] + user2Pourcentage[1]) * 100);
+  if (pourcentageUtilisateur1 > pourcentageUtilisateur2) {
+    txt.innerText = `${user1Pourcentage[0]} a envoyé ${pourcentageUtilisateur1}% des messages`
+  } else {
+    txt.innerText = `${user2Pourcentage[0]} a envoyé ${pourcentageUtilisateur2}% des messages`
+  }
+</script>
 </html>

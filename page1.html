@@ -24,8 +24,15 @@
     <a class="clicSuivant" href="./page2.html"></a>
 </body>
 <script>
+    // Vérification que c'est bien un fichier de données WhatsApp
+    if (localStorage.getItem("nombreMessagesEnvoyes") === "erreur") {
+        document.getElementById("nombreMessagesEnvoyes").innerText = "Le fichier que tu nous as transmis n'est pas valide 😥. Clique à droite pour revenir à l'accueil"
+        document.querySelector(".clicSuivant").href = "./index.html"
+        document.querySelector(".barreAvancement").style.display = "none"
+    }
     // Récupérer les messages depuis le stockage local
     const nombreMessagesEnvoyes = JSON.parse(localStorage.getItem('nombreMessagesEnvoyes'));
-    document.getElementById("nombreMessagesEnvoyes").innerText = `Vous vous êtes envoyés ${nombreMessagesEnvoyes} messages 😲`;
+    let nb = new Intl.NumberFormat().format(nombreMessagesEnvoyes);
+    document.getElementById("nombreMessagesEnvoyes").innerText = `Vous vous êtes envoyés ${nb} messages 😲`;
 </script>
 </html>

@@ -18,9 +18,15 @@
         <div class="barreAvancement-element barreAvancement-element--actif"></div>
     </div>
     <div class="contenu">
-        <span class="contenu-texte">Ensemble vous avez inscrit 58 635 caractères sur votre clavier 😱</span>
+        <span class="contenu-texte" id="caracteresInscrits">Ensemble vous avez inscrit 58 635 caractères sur votre clavier 😱</span>
     </div>
     <a class="clicPrecedent" href="./page5.html"></a>
     <a class="clicSuivant" href="./fin.html"></a>
 </body>
+<script>
+    let caracteresInscrits = localStorage.getItem('caracteresInscrits');
+    let nb = new Intl.NumberFormat().format(caracteresInscrits);
+    let txt = document.getElementById("caracteresInscrits");
+    txt.innerText = `Ensemble vous avez inscrit ${nb} caractères sur votre clavier 😱`
+</script>
 </html>

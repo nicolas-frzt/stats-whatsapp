@@ -16,15 +16,13 @@
 <body class="accueil">
     <div class="accueil-premierAffichage">
         <span class="accueil-premierAffichage-titre">Statistiques discussions WhatsApp</span>
-        <form action="#type your action here" method="POST" enctype="multipart/form-data">
-            <div id="yourBtn" class="accueil-premierAffichage-bouton bouton" onclick="getFile()">
-                <span class="bouton-texte">Choisir le fichier</span>
-            </div>
-            <!-- Le vrai input:file qui est caché (mais qui va être cliqué au clic de la div du dessus)-->
-            <div style='height: 0px;width:0px; overflow:hidden;'>
-                <input id="upfile" class="inputFile" type="file" value="upload" accept=".zip"/>
-            </div>
-          </form>
+        <div class="accueil-premierAffichage-bouton bouton" onclick="getFile()">
+            <span class="bouton-texte">Choisir le fichier</span>
+        </div>
+        <!-- Le vrai input:file qui est caché (mais qui va être cliqué au clic de la div du dessus)-->
+        <div style='height: 0px;width:0px; overflow:hidden;'>
+            <input id="upfile" class="inputFile" type="file" value="upload" accept=".zip"/>
+        </div>
         <div class="accueil-premierAffichage-scroll">
             <a class="accueil-premierAffichage-scroll-texte" href="#tuto-ancre">Comment faire ?</a>
             <a class="fleche" href="#tuto-ancre">
@@ -110,9 +108,9 @@
                     Clique sur le bouton ci-dessous et choisis le fichier qui s’appelle “Discussion avec [Nom de la personne].zip”
                 </span>
             </div>
-            <a class="accueil-tuto-etapes-bouton bouton" href="./chargement.html">
+            <div class="accueil-tuto-etapes-bouton bouton" onclick="getFile()">
                 <span class="bouton-texte">Choisir le fichier</span>
-            </a>
+            </div>
         </div>
         <div class="accueil-tuto-etapes" style="display: none">
             <div class="accueil-tuto-etapes-etape">
@@ -175,9 +173,9 @@
                     Clique sur le bouton ci-dessous et choisis le fichier qui s’appelle “Discussion avec [Nom de la personne].zip”
                 </span>
             </div>
-            <a class="accueil-tuto-etapes-bouton bouton" href="./chargement.html">
+            <div class="accueil-tuto-etapes-bouton bouton" onclick="getFile()">
                 <span class="bouton-texte">Choisir le fichier</span>
-            </a>
+            </div>
         </div>
         
     </div>
@@ -188,6 +186,6 @@
     <!-- <input type="file" name="whatsAppExport" id="whatsAppExport" accept=".zip">
     <div id="chart_div"></div> -->
 </body>
-<script src="elementsCliquables.js"></script>
+<script src="scriptNavigateur.js"></script>
 <!-- <script type="module" src="script.js"></script> -->
 </html>

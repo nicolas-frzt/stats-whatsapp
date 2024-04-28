@@ -19,7 +19,7 @@
     </div>
     <div class="contenu">
         <span class="contenu-titre">Vos premiers messages étaient :</span>
-        <span class="contenu-premiersMessages">
+        <span class="contenu-premiersMessages" id="premiersMessagesEnvoyes">
             Zozouille : Salut Nico comment ça va ? <br>
             Nicolas : Coucou Mv ça va super et toi ? <br>
             Zozouille : Salut Nico comment ça va ? <br>
@@ -35,4 +35,9 @@
     <a class="clicPrecedent" href="./page2.html"></a>
     <a class="clicSuivant" href="./page4.html"></a>
 </body>
+<script>
+    // Récupérer les messages depuis le stockage local
+    const premiersMessagesEnvoyes = JSON.parse(localStorage.getItem('premiersMessagesEnvoyes'));
+    document.getElementById("premiersMessagesEnvoyes").innerText = premiersMessagesEnvoyes;
+</script>
 </html>
