@@ -1,7 +1,7 @@
 {
     "name": "stats_whatsapp",
     "version": "1.0.0",
-    "description": "Outil permettant d'afficher des statistiques sur ses discutions WhatsApp",
+    "description": "Outil permettant d'afficher des statistiques sur ses discussions WhatsApp",
     "main": "script.js",
     "scripts": {
       "sass": "sass --watch ./styles_sass/_accueil.scss:./styles_css/accueil.css ./styles_sass/_default.scss:./styles_css/default.css ./styles_sass/_composants.scss:./styles_css/composants.css ./styles_sass/_chargement.scss:./styles_css/chargement.css ./styles_sass/_page1.scss:./styles_css/page1.css ./styles_sass/_page2.scss:./styles_css/page2.css ./styles_sass/_page3.scss:./styles_css/page3.css ./styles_sass/_page4.scss:./styles_css/page4.css ./styles_sass/_page5.scss:./styles_css/page5.css ./styles_sass/_page6.scss:./styles_css/page6.css ./styles_sass/_fin.scss:./styles_css/fin.css ./styles_sass/_information.scss:./styles_css/information.css"

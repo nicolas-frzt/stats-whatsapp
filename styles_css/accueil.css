@@ -22,6 +22,7 @@
 .accueil-premierAffichage-bouton {
   position: absolute;
   top: 50%;
+  left: 25%;
 }
 .accueil-premierAffichage-scroll {
   position: absolute;

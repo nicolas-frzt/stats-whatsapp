@@ -18,8 +18,14 @@
         <div class="barreAvancement-element"></div>
     </div>
     <div class="contenu">
-        <span class="contenu-texte">Vous vous êtes envoyés 5680 messages 😲</span>
+        <span class="contenu-texte" id="nombreMessagesEnvoyes"></span>
+        <!-- <span class="contenu-texte" id="nombreMessagesEnvoyes">Vous vous êtes envoyés 5680 messages 😲</span> -->
     </div>
     <a class="clicSuivant" href="./page2.html"></a>
 </body>
+<script>
+    // Récupérer les messages depuis le stockage local
+    const nombreMessagesEnvoyes = JSON.parse(localStorage.getItem('nombreMessagesEnvoyes'));
+    document.getElementById("nombreMessagesEnvoyes").innerText = `Vous vous êtes envoyés ${nombreMessagesEnvoyes} messages 😲`;
+</script>
 </html>
