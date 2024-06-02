@@ -10,7 +10,7 @@ body .contenu {
   justify-content: center;
   height: 100%;
   flex-direction: column;
-  gap: 10vh;
+  gap: 8vw;
 }
 body .contenu-titre {
   font-family: "inria", sans-serif;

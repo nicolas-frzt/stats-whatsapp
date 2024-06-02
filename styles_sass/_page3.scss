@@ -7,7 +7,7 @@ body {
         justify-content: center;
         height: 100%;
         flex-direction: column;
-        gap: 10vh;
+        gap: 8vw;
         &-titre {
             @include titres_analyse();
             margin-top: 13vh;

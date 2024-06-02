@@ -39,7 +39,6 @@ function handleFiles() {
                         // En local :
                         // window.location.replace('/chargement.html');
 
-                        
                         // Transforme le fichier txt de messages en tableauDObjets
                         //  La fonction .filter() permet de supprimer les messages définis comme undefined 
                         // (envoyés par WhatsApp ou sur plusieurs lignes)
@@ -103,7 +102,8 @@ function convertirLigneEnObjet(ligne) {
 function premiersMessagesEnvoyes(tableauMessages) {
     let reponse = "";
     for (let index = 0; index < 10; index++) {
-        reponse = reponse + " \n   " + tableauMessages[index].utilisateur + " : " + tableauMessages[index].message;        
+        console.log(tableauMessages[index]);
+        reponse = reponse + " \n   " + " " + tableauMessages[index].utilisateur + " (" + tableauMessages[index].date.toLocaleString('fr-FR', { timeZone: 'UTC' }) + ") : " + tableauMessages[index].message + "\n";
     }
     return reponse
 }
