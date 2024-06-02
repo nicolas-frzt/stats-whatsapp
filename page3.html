@@ -29,5 +29,8 @@
     // Récupérer les messages depuis le stockage local
     const premiersMessagesEnvoyes = JSON.parse(localStorage.getItem('premiersMessagesEnvoyes'));
     document.getElementById("premiersMessagesEnvoyes").innerText = premiersMessagesEnvoyes;
+    let hauteurEcran = document.documentElement.scrollHeight;
+    document.querySelector(".clicPrecedent").style.height = document.documentElement.scrollHeight + "px";
+    document.querySelector(".clicSuivant").style.height = document.documentElement.scrollHeight + "px";
 </script>
 </html>

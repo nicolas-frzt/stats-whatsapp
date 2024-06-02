@@ -27,5 +27,13 @@ body .contenu-graphique {
   width: 100%;
   height: 50vh;
 }
+body .contenu-infoInteractivite {
+  font-family: "inria", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
 
 /*# sourceMappingURL=page2.css.map */
