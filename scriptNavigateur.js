@@ -102,7 +102,6 @@ function convertirLigneEnObjet(ligne) {
 function premiersMessagesEnvoyes(tableauMessages) {
     let reponse = "";
     for (let index = 0; index < 10; index++) {
-        console.log(tableauMessages[index]);
         reponse = reponse + " \n   " + " " + tableauMessages[index].utilisateur + " (" + tableauMessages[index].date.toLocaleString('fr-FR', { timeZone: 'UTC' }) + ") : " + tableauMessages[index].message + "\n";
     }
     return reponse
@@ -157,7 +156,7 @@ function concatenerTousLesMessages(tableauMessages) {
 function motsLesPlusUtilises(tableauMessages) {
     const frequenceApparitionMots = {}; // Objet qui contiendra tous les couples mot / frequence d'apparition
     // Supprimer de la réponse de mots les mots les + utilisés donc pas intéressants
-    const listeMotsAnnulables = ["je","j","du","pas","en","on","il","ils","pour","l","les","le","la","un","une","a","dans","par","vers","tu","nous","vous","elle","elles","moi","toi","t","y","avec","sur","suis","es","est","ou","se","ce","cette","cet","ces","me","ne","mon","ma","ta","sa","qu","que","ai","as","avais","avait","tout","tre","très","m","d","c","de","trop","et","est","si","te","qui","lui","s"];
+    const listeMotsAnnulables = ["je","au","des","j","du","pas","en","on","il","ils","pour","l","les","le","la","un","une","a","dans","par","vers","tu","nous","vous","elle","elles","moi","toi","t","y","avec","sur","suis","es","est","ou","se","ce","cette","cet","ces","me","ne","mon","ma","ta","sa","qu","que","ai","as","avais","avait","tout","tre","très","m","d","c","de","trop","et","est","si","te","qui","lui","s"];
     // Ce tableau contient tous les mots utilisés, chacun dans une string différente
     let tableauTousLesMots = concatenerTousLesMessages(tableauMessages).toLowerCase().match(/\b\p{L}+\b/giu);
     for (const mot of tableauTousLesMots) {
@@ -179,8 +178,18 @@ function motsLesPlusUtilises(tableauMessages) {
     const sortedFrequencesApparitionMots = Object.entries(frequenceApparitionMots)
         .sort((a, b) => b[1] - a[1]);
 
+    for (let index = 0; index < sortedFrequencesApparitionMots.length; index++) {
+        if(sortedFrequencesApparitionMots[index][0] === "médias") {
+            sortedFrequencesApparitionMots.splice(index, 1);
+        }
+        if(sortedFrequencesApparitionMots[index][0] === "omis") {
+            sortedFrequencesApparitionMots.splice(index, 1);
+        }
+    }
+        
     // Coupe le tableau aux 10 (ajustables) premiers mots les + utilisés
     const top10MotsPlusUtilises = sortedFrequencesApparitionMots.slice(0, 10);
+    console.log(top10MotsPlusUtilises);
     return top10MotsPlusUtilises;
 
     // Retourne un tableau comprenant pour les 10 mots les + utilisés leur couple mot / fréquence
