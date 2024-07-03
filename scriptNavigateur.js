@@ -35,9 +35,9 @@ function handleFiles() {
                 if (relativePath.endsWith('.txt')) {
                     zipEntry.async("string").then(function (contenuFichier) {
                         // En ligne :
-                        // window.location.replace('/stats-whatsapp/chargement.html');
+                        window.location.replace('/stats-whatsapp/chargement.html');
                         // En local :
-                        window.location.replace('/chargement.html');
+                        // window.location.replace('/chargement.html');
 
                         // Transforme le fichier txt de messages en tableauDObjets
                         //  La fonction .filter() permet de supprimer les messages définis comme undefined 
